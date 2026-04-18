@@ -7,168 +7,112 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Noto Sans Arabic', sans-serif; background-color: #ffffff; color: #202124; margin: 0; }
-        .play-button { background-color: #01875f; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; color: white; border: none; }
-        .play-button:hover { background-color: #006b4c; box-shadow: 0 1px 3px 0 rgba(60,64,67,.30), 0 4px 8px 3px rgba(60,64,67,.15); }
-        .play-button:active { transform: scale(0.98); }
+        body { font-family: 'Noto Sans Arabic', sans-serif; background-color: #ffffff; color: #202124; }
+        .play-button { background-color: #01875f; transition: background-color 0.2s; cursor: pointer; }
+        .play-button:hover { background-color: #006b4c; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .app-shadow { box-shadow: 0 1px 2px 0 rgba(60,64,67,.30), 0 1px 3px 1px rgba(60,64,67,.15); }
-        .category-chip { border: 1px solid #dadce0; color: #5f6368; padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 500; }
     </style>
 </head>
-<body class="bg-gray-50/50">
+<body class="bg-gray-50">
 
-    <!-- Navbar -->
-    <header class="bg-white border-b sticky top-0 z-50 px-4 md:px-8 py-3 flex justify-between items-center">
+    <header class="bg-white border-b sticky top-0 z-50 px-4 py-3 flex justify-between items-center">
         <div class="flex items-center gap-4">
             <svg viewBox="0 0 24 24" class="w-8 h-8" fill="none"><path d="M3.529 1.41a2.126 2.126 0 0 0-.472 1.48v18.22c0 .584.19 1.127.472 1.48l10.393-10.42L3.529 1.41z" fill="#EA4335"/><path d="M17.433 15.367l-3.511-3.511L3.529 22.27c.348.31.81.5 1.32.5.405 0 .783-.114 1.109-.311l11.475-7.092z" fill="#FBBC04"/><path d="M3.529 1.731c-.347.309-.508.73-.508 1.16v18.22c0 .43.161.851.508 1.16L13.922 11.85 3.529 1.731z" fill="#4285F4"/><path d="M17.433 8.333l-11.475-7.09A2.115 2.115 0 0 0 4.849 1c-.51 0-.972.19-1.32.5l10.393 10.358 3.511-3.525z" fill="#34A853"/></svg>
-            <span class="text-xl text-gray-700 font-medium tracking-tight">Google Play</span>
-        </div>
-        <div class="flex items-center gap-4">
-            <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white text-xs font-bold">M</div>
+            <span class="text-xl text-gray-600 font-medium">Google Play</span>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto bg-white min-h-screen sm:mt-6 sm:rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-        
-        <!-- Identity Section -->
-        <section class="p-6 md:p-12 flex flex-col md:flex-row gap-8 items-start">
-            <div class="w-28 h-28 md:w-56 md:h-56 rounded-[22%] overflow-hidden app-shadow border border-gray-100 flex-shrink-0">
+    <main class="max-w-5xl mx-auto bg-white min-h-screen sm:mt-4 sm:rounded-xl overflow-hidden shadow-sm">
+        <section class="p-6 md:p-10 flex flex-col md:flex-row gap-8 items-start">
+            <div class="w-24 h-24 md:w-48 md:h-48 rounded-2xl overflow-hidden app-shadow border border-gray-100 flex-shrink-0">
                 <img src="https://img.freepik.com/free-vector/modern-os-logo-concept_23-2147915594.jpg" alt="LifeOS Icon" class="w-full h-full object-cover">
             </div>
-            <div class="flex-grow pt-2">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-2">LifeOS</h1>
-                <p class="text-green-700 font-medium text-lg md:text-xl mb-6">Mahmoud Ahmed</p>
-                
-                <div class="flex flex-wrap gap-4">
-                    <button id="downloadBtn" class="play-button px-12 py-2.5 rounded-lg font-bold text-sm md:text-base">
+            <div class="flex-grow">
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-2">LifeOS</h1>
+                <p class="text-green-700 font-medium text-lg mb-4">Mahmoud Ahmed • مبرمج تطبيقات</p>
+                <div class="flex flex-wrap gap-3">
+                    <button id="downloadBtn" class="play-button text-white px-10 py-2.5 rounded-lg font-medium text-sm md:text-base shadow-sm">
                         تثبيت
                     </button>
-                    <button class="text-green-700 font-medium hover:bg-green-50 px-4 py-2 rounded-lg transition text-sm">إضافة إلى قائمة المفضلات</button>
                 </div>
             </div>
         </section>
 
         <!-- Stats Bar -->
-        <section class="px-6 md:px-12 py-6 flex justify-between border-b border-t bg-gray-50/30 overflow-x-auto hide-scrollbar text-center">
-            <div class="px-6 border-l last:border-l-0 flex-shrink-0">
-                <p class="text-gray-900 font-bold text-lg">5.0 ★</p>
-                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">تقييم عالي</p>
+        <section class="px-6 md:px-10 py-4 flex justify-between border-b overflow-x-auto hide-scrollbar text-center">
+            <div class="px-4 border-l last:border-l-0 flex-shrink-0">
+                <p class="text-gray-900 font-bold flex items-center justify-center gap-1">5.0 <span class="text-[10px]">★</span></p>
+                <p class="text-xs text-gray-500">مراجعات حقيقية</p>
             </div>
-            <div class="px-6 border-l last:border-l-0 flex-shrink-0">
-                <p id="downloadCount" class="text-gray-900 font-bold text-lg">90</p>
-                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">عمليات تنزيل</p>
+            <div class="px-4 border-l last:border-l-0 flex-shrink-0">
+                <p id="downloadCount" class="text-gray-900 font-bold">--</p>
+                <p class="text-xs text-gray-500">عمليات التنزيل</p>
             </div>
-            <div class="px-6 border-l last:border-l-0 flex-shrink-0">
-                <p class="text-gray-900 font-bold text-lg">90 MB</p>
-                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">حجم التطبيق</p>
-            </div>
-            <div class="px-6 border-l last:border-l-0 flex-shrink-0">
-                <div class="flex justify-center mb-1">
-                    <span class="bg-gray-200 text-gray-700 text-[10px] px-1.5 rounded font-bold">3+</span>
-                </div>
-                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">للجميع</p>
+            <div class="px-4 border-l last:border-l-0 flex-shrink-0">
+                <p class="text-gray-900 font-bold">90 MB</p>
+                <p class="text-xs text-gray-500">الحجم</p>
             </div>
         </section>
 
         <!-- Gallery -->
-        <section class="py-10">
-            <div class="flex gap-4 overflow-x-auto px-6 md:px-12 pb-4 hide-scrollbar">
-                <img src="https://via.placeholder.com/260x520/f3f4f6/333?text=LifeOS+Dashboard" class="h-80 md:h-[500px] rounded-2xl border border-gray-200 app-shadow">
-                <img src="https://via.placeholder.com/260x520/f3f4f6/333?text=Smart+Schedule" class="h-80 md:h-[500px] rounded-2xl border border-gray-200 app-shadow">
-                <img src="https://via.placeholder.com/260x520/f3f4f6/333?text=Personal+Goals" class="h-80 md:h-[500px] rounded-2xl border border-gray-200 app-shadow">
+        <section class="py-8">
+            <div class="flex gap-4 overflow-x-auto px-6 md:px-10 pb-4 hide-scrollbar">
+                <img src="https://via.placeholder.com/240x480/f3f4f6/999?text=LifeOS+1" class="h-64 md:h-96 rounded-xl border">
+                <img src="https://via.placeholder.com/240x480/f3f4f6/999?text=LifeOS+2" class="h-64 md:h-96 rounded-xl border">
             </div>
         </section>
-
-        <!-- Description -->
-        <section class="px-6 md:px-12 py-10 border-t">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-xl font-bold">عن هذا التطبيق</h2>
-                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-            </div>
-            <p class="text-gray-600 leading-relaxed text-sm md:text-base max-w-3xl mb-6">
-                تطبيق LifeOS هو نظام متكامل مصمم لمساعدتك على إدارة حياتك اليومية بكفاءة عالية. تتبع مهامك، نظم جدولك الزمني، وحقق أهدافك من خلال واجهة مستخدم بسيطة وأنيقة.
-            </p>
-            <div class="flex gap-2">
-                <span class="category-chip">الإنتاجية</span>
-                <span class="category-chip">الأدوات</span>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="bg-gray-50 px-6 py-12 text-center">
-            <p class="text-gray-400 text-[10px] uppercase tracking-widest font-bold">تم التطوير بواسطة محمود أحمد &copy; 2026</p>
-            <p class="text-gray-300 text-[9px] mt-4">جوجل بلاي وشعار Google Play هما علامات تجارية لشركة Google LLC.</p>
-        </footer>
     </main>
 
-    <!-- Floating Download Bar (Mobile Only) -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white p-4 border-t shadow-[0_-5px_20px_rgba(0,0,0,0.05)] z-50">
-        <button id="mobileDownloadBtn" class="play-button w-full py-3 rounded-lg font-bold text-sm">
-            تنزيل (90 MB)
-        </button>
-    </div>
-
-    <!-- Firebase System -->
+    <!-- Firebase Logic -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getFirestore, doc, onSnapshot, updateDoc, increment, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, doc, onSnapshot, updateDoc, increment, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
         import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 
-        // Your Real Config
-        const firebaseConfig = {
-            apiKey: "AIzaSyD8h9lpeAexv9JxIoP65ZZw-Qd0Z48q6ak",
-            authDomain: "dark-54a72.firebaseapp.com",
-            databaseURL: "https://dark-54a72-default-rtdb.firebaseio.com",
-            projectId: "dark-54a72",
-            storageBucket: "dark-54a72.firebasestorage.app",
-            messagingSenderId: "775459781067",
-            appId: "1:775459781067:web:8049b37a727c759b6bde4e",
-            measurementId: "G-6ZWJ3S8GJC"
-        };
-
+        const firebaseConfig = JSON.parse(__firebase_config);
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         const auth = getAuth(app);
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'life-os-tracking';
 
         const downloadLink = "https://www.mediafire.com/file/dktu494de5txn2r/life_os.apk/file";
-        
-        // Path matches Firebase standard for this environment
-        const statsDocRef = doc(db, 'artifacts', 'life-os-tracking', 'public', 'data', 'stats');
+        const statsDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'stats');
 
-        async function startApp() {
+        // 1. Auth First
+        async function init() {
             try {
                 await signInAnonymously(auth);
-            } catch (e) { console.error("Firebase Login Error", e); }
+            } catch (err) { console.error("Auth failed", err); }
         }
 
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                // Real-time Cloud Variable
+                // 2. Track & Display Count
                 onSnapshot(statsDocRef, (snap) => {
                     if (snap.exists()) {
                         document.getElementById('downloadCount').innerText = snap.data().count || 90;
                     } else {
-                        // Init cloud variable if first time
+                        // Initialize if doesn't exist
                         setDoc(statsDocRef, { count: 90 });
+                        document.getElementById('downloadCount').innerText = 90;
                     }
-                });
+                }, (err) => console.error("Snapshot error", err));
             }
         });
 
-        const trackAndDownload = async () => {
+        // 3. Increment on Click
+        document.getElementById('downloadBtn').onclick = async () => {
             if (auth.currentUser) {
-                // Update Cloud variable
-                await updateDoc(statsDocRef, { count: increment(1) });
+                await updateDoc(statsDocRef, {
+                    count: increment(1)
+                });
             }
             window.open(downloadLink, '_blank');
         };
 
-        document.getElementById('downloadBtn').onclick = trackAndDownload;
-        document.getElementById('mobileDownloadBtn').onclick = trackAndDownload;
-
-        startApp();
+        init();
     </script>
 </body>
 </html>
